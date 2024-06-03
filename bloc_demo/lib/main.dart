@@ -13,9 +13,8 @@ class MyApp extends StatelessWidget {
     return ResponsiveApp(builder: (context) {
       return MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+        theme: ThemeData.dark(useMaterial3: true).copyWith(
+          scaffoldBackgroundColor: const Color(0xFF212332),
         ),
         home: const MainScreen(),
       );
