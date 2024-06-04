@@ -1,4 +1,4 @@
-import 'package:bloc_demo/screens/main/main_screen.dart';
+import 'package:bloc_demo/screens/event/more_action_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.dark(useMaterial3: true).copyWith(
           scaffoldBackgroundColor: const Color(0xFF212332),
         ),
-        home: const MainScreen(),
+        home: const MoreActionScreenScreen(),
       );
     });
   }
