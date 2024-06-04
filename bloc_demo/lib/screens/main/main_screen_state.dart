@@ -5,7 +5,7 @@ sealed class MainScreenState extends Equatable {
 }
 
 final class MainScreenInitial extends MainScreenState {
-  const MainScreenInitial(this._count);
+  MainScreenInitial(this._count);
   final int _count;
 
   /// 获取当前的值
