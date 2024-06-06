@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:styled_widget/styled_widget.dart';
 
 import '../widgets/widgets.dart';
 
@@ -15,11 +16,31 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(height: 30),
             const LoginTip(),
             const SizedBox(height: 20),
-            const LoginRadiusCard(
+            LoginRadiusCard(
               child: Padding(
-                padding: EdgeInsets.all(20),
-                child: Column(
-                  children: [],
+                padding: const EdgeInsets.all(30),
+                child: SafeArea(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          const SizedBox(height: 60),
+                          const IntputCard(),
+                          const SizedBox(height: 40),
+                          const Text('Forgot Password?').textColor(Colors.grey),
+                          const SizedBox(height: 40),
+                          BackgroundTextButton(
+                            title: 'Login',
+                            color: Colors.orange[900],
+                            horizontal: 90,
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                      const SocialLogin(),
+                    ],
+                  ),
                 ),
               ),
             ),
