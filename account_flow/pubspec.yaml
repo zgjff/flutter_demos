@@ -1,0 +1,20 @@
+name: account_flow
+description: "账号欢迎、注册、登录全流程UI."
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: '>=3.4.1 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons:
+  styled_widget:
+  simple_animations:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints:
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
