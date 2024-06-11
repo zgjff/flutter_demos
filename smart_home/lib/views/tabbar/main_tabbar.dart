@@ -9,11 +9,9 @@ class MainTabBar extends StatefulWidget {
   State<MainTabBar> createState() => _MainTabBarState();
 }
 
-class _MainTabBarState extends State<MainTabBar>
-    with SingleTickerProviderStateMixin {
+class _MainTabBarState extends State<MainTabBar> with TickerProviderStateMixin {
   late TabController? _controller;
   int _currentIndex = 0;
-
   @override
   void initState() {
     _controller = TabController(length: 4, vsync: this);
@@ -30,7 +28,6 @@ class _MainTabBarState extends State<MainTabBar>
 
   @override
   Widget build(BuildContext context) {
-    print('Main Controller');
     return Scaffold(
       body: TabBarView(
         controller: _controller,
