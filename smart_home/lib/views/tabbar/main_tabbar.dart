@@ -14,7 +14,7 @@ class _MainTabBarState extends State<MainTabBar> with TickerProviderStateMixin {
   int _currentIndex = 0;
   @override
   void initState() {
-    _controller = TabController(length: 4, vsync: this);
+    _controller = TabController(length: 2, vsync: this);
     super.initState();
     _controller?.addListener(_tabBarControllerListen);
   }
@@ -32,27 +32,41 @@ class _MainTabBarState extends State<MainTabBar> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _controller,
         children: const [
-          HomeView(color: Colors.orange),
-          HomeView(color: Colors.red),
-          HomeView(color: Colors.yellow),
-          HomeView(color: Colors.purple),
+          HomeView(color: Colors.grey),
+          HomeView(color: Colors.white60)
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (idx) {
-          _controller?.index = idx;
-        },
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.lime,
-        currentIndex: _currentIndex,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.ice_skating), label: 'red'),
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'red'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.perm_contact_cal), label: 'red'),
-          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'red'),
-        ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.blue,
+        elevation: 0,
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        clipBehavior: Clip.hardEdge,
+        notchMargin: 18,
+        elevation: 20,
+        shape: const CircularNotchedRectangle(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.home),
+              onPressed: () {
+                _controller?.index = 0;
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.settings),
+              onPressed: () {
+                _controller?.index = 1;
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
