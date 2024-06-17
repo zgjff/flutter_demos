@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:styled_widget/styled_widget.dart';
 
 import '..//home/home_view.dart';
 
@@ -31,42 +32,34 @@ class _MainTabBarState extends State<MainTabBar> with TickerProviderStateMixin {
     return Scaffold(
       body: TabBarView(
         controller: _controller,
-        children: const [
-          HomeView(color: Colors.grey),
-          HomeView(color: Colors.white60)
-        ],
+        children: const [HomeView(), HomeView()],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.blue,
-        elevation: 0,
-        child: const Icon(Icons.add),
+      floatingActionButton: SizedBox(
+        width: 80,
+        height: 80,
+        child: FloatingActionButton(
+          onPressed: () {},
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.blue,
+          shape: const CircleBorder(),
+          elevation: 0,
+          child: const Icon(
+            Icons.mic,
+            size: 35,
+          ),
+        ).fittedBox(),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
         clipBehavior: Clip.hardEdge,
-        notchMargin: 18,
-        elevation: 20,
+        notchMargin: 12,
+        elevation: 10,
         shape: const CircularNotchedRectangle(),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              icon: const Icon(Icons.home),
-              onPressed: () {
-                _controller?.index = 0;
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.settings),
-              onPressed: () {
-                _controller?.index = 1;
-              },
-            ),
-          ],
-        ),
+        child: [
+          _tabBarItem(context, Icons.home_filled, 0),
+          _tabBarItem(context, Icons.settings, 1),
+        ].toRow(mainAxisAlignment: MainAxisAlignment.spaceAround),
       ),
     );
   }
@@ -81,5 +74,21 @@ class _MainTabBarState extends State<MainTabBar> with TickerProviderStateMixin {
     setState(() {
       _currentIndex = _controller!.index;
     });
+  }
+
+  IconButton _tabBarItem(BuildContext context, IconData icon, int index) {
+    return IconButton(
+      onPressed: () {
+        _controller?.index = index;
+      },
+      isSelected: _currentIndex == index,
+      icon: Icon(
+        icon,
+        size: 30,
+        color: _currentIndex == index
+            ? Theme.of(context).primaryColor
+            : const Color(0xff61688B),
+      ),
+    );
   }
 }

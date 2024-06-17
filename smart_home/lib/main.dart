@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        primaryColor: const Color(0xff6695FF),
+        scaffoldBackgroundColor: Colors.grey[100],
       ),
       home: const MainTabBar(),
     );

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({super.key, required this.color});
-
-  final Color color;
+  const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -11,13 +9,6 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView>
     with AutomaticKeepAliveClientMixin {
-  late Color color;
-  @override
-  void initState() {
-    super.initState();
-    color = widget.color;
-  }
-
   @override
   bool get wantKeepAlive => true;
 
@@ -27,7 +18,6 @@ class _HomeViewState extends State<HomeView>
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      color: color,
     );
   }
 }
