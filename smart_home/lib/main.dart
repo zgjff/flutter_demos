@@ -18,6 +18,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         primaryColor: const Color(0xff6695FF),
         scaffoldBackgroundColor: Colors.grey[100],
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            color: Color(0xff161B3A),
+            fontSize: 36,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
       home: const MainTabBar(),
     );

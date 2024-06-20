@@ -13,10 +13,12 @@ class MainTabBar extends StatefulWidget {
 class _MainTabBarState extends State<MainTabBar> with TickerProviderStateMixin {
   late TabController? _controller;
   int _currentIndex = 0;
+  late List<Widget> pages;
   @override
   void initState() {
     _controller = TabController(length: 2, vsync: this);
     super.initState();
+    pages = [const HomeView(), const HomeView()];
     _controller?.addListener(_tabBarControllerListen);
   }
 
@@ -32,7 +34,7 @@ class _MainTabBarState extends State<MainTabBar> with TickerProviderStateMixin {
     return Scaffold(
       body: TabBarView(
         controller: _controller,
-        children: const [HomeView(), HomeView()],
+        children: pages,
       ),
       floatingActionButton: SizedBox(
         width: 80,
