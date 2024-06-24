@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home/views/detail/detail_view.dart';
 import 'package:smart_home/views/home/widgets/device_card.dart';
 import 'package:styled_widget/styled_widget.dart';
 
@@ -24,12 +25,10 @@ class _HomeViewState extends State<HomeView>
     super.build(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(
             Icons.sort,
-            size: 25,
           ),
         ),
         actions: [
@@ -59,7 +58,7 @@ class _HomeViewState extends State<HomeView>
                 .fontSize(13)
                 .textColor(const Color(0xff61688B)),
             const SizedBox(height: 30),
-            _devicesView(),
+            _devicesView(context),
           ],
         ),
       ),
@@ -94,11 +93,19 @@ class _HomeViewState extends State<HomeView>
     );
   }
 
-  Widget _devicesView() {
+  Widget _devicesView(BuildContext context) {
     return Row(
       children: [
         Expanded(
           child: DeviceCard(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const DetailView(),
+                ),
+              );
+            },
             title: devices[0].title,
             subTitle: devices[0].subTitle,
             icon: devices[0].icon,
