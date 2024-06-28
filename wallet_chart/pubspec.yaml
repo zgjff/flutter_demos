@@ -9,6 +9,8 @@ dependencies:
     sdk: flutter
   cupertino_icons:
   styled_widget:
+  flutter_bloc:
+  equatable:
 dev_dependencies:
   flutter_test:
     sdk: flutter
