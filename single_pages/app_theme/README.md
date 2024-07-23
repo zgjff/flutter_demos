@@ -1,6 +1,6 @@
-# skeleton_loading
+# app_theme
 
-加载骨架屏UI.
+app主题切换.
 
 ## Getting Started
 
