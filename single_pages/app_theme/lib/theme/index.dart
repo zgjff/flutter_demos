@@ -1,2 +1,2 @@
-export 'dart_theme.dart';
 export 'theme_provider.dart';
+export 'theme_provider_global.dart';

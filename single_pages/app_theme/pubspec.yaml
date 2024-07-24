@@ -12,6 +12,7 @@ dependencies:
   flutter_screenutil:
   provider:
   salomon_bottom_bar:
+  shared_preferences:
 dev_dependencies:
   flutter_test:
     sdk: flutter
