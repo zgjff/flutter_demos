@@ -1,0 +1,23 @@
+name: wc_account
+description: "账号相关模块."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons:
+  styled_widget:
+  flutter_bloc:
+  equatable:
+  go_router:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints:
+flutter:
+  uses-material-design: true

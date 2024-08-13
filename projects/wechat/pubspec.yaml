@@ -1,0 +1,22 @@
+name: wechat
+description: "仿微信UI实战."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+dependencies:
+  flutter:
+    sdk: flutter
+
+  wc_account:
+    path: packages/wc_account
+
+  cupertino_icons:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints:
+flutter:
+  uses-material-design: true
