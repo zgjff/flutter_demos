@@ -12,8 +12,11 @@ dependencies:
 
   wc_account:
     path: packages/wc_account
+  wc_services:
+    path: packages/wc_services
 
   cupertino_icons:
+  go_router:
 dev_dependencies:
   flutter_test:
     sdk: flutter
