@@ -1,0 +1,22 @@
+name: wc_tool
+description: "工具类."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+dependencies:
+  flutter:
+    sdk: flutter
+
+  meta:
+  flutter_bloc:
+  equatable:
+  shared_preferences:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints:
+flutter:
+  uses-material-design: true

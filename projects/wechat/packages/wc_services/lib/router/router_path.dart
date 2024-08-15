@@ -4,15 +4,19 @@ part 'router_path_item.dart';
 class RouterPath {
   /// 起始路由
   static const index =
-      RouterPathItem(name: 'index', parentPath: null, path: '/');
+      RouterPathItem(name: 'app_index', parentPath: null, path: '/');
+
+  /// 启动页面
+  static const launch =
+      RouterPathItem(name: 'app_launch', parentPath: null, path: '/launch');
 
   /// 登录注册启动页面
-  static const account =
-      RouterPathItem(name: 'account', parentPath: null, path: '/account');
+  static const login =
+      RouterPathItem(name: 'app_login', parentPath: null, path: '/login');
 
   /// 手机号登录
   static const phoneLogin = RouterPathItem(
-      name: 'account_login_phone', parentPath: '/account', path: 'login/phone');
+      name: 'app_login_phone', parentPath: '/login', path: 'phone');
 
   /// 主app tab
   static const appTab = "/tab";

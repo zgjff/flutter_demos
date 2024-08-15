@@ -9,8 +9,8 @@ import '../pages/index.dart';
 class AccountPageRouter {
   AccountPageRouter() {
     final account = GoRoute(
-      name: RouterPath.account.name,
-      path: RouterPath.account.fullPath,
+      name: RouterPath.login.name,
+      path: RouterPath.login.fullPath,
       builder: (_, s) => const AccountActivatePage(),
       routes: [
         GoRoute(

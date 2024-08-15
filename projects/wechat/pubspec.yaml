@@ -14,6 +14,8 @@ dependencies:
     path: packages/wc_account
   wc_services:
     path: packages/wc_services
+  wc_tool:
+    path: packages/wc_tool
 
   cupertino_icons:
   go_router:

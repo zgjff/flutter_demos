@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:wc_tool/app_preference_cache/app_preference_cache.dart';
 
 import 'router/app_router.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  AppPreferenceCache.init().then((_) => {runApp(const MyApp())});
 }
 
 class MyApp extends StatelessWidget {

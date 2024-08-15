@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:styled_widget/styled_widget.dart';
 import 'package:wc_services/router/router_path.dart';
 
+import '../../generated/assets.dart';
+
 /// 登录注册启动页面
 class AccountActivatePage extends StatelessWidget {
   const AccountActivatePage({super.key});
@@ -27,8 +29,7 @@ class AccountActivatePage extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/LaunchImage.png',
-                package: 'wc_account'),
+            image: AssetImage(Assets.imagesLaunchImage, package: 'wc_account'),
             fit: BoxFit.cover,
           ),
         ),
