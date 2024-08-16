@@ -10,14 +10,13 @@ class AccountActivatePage extends StatelessWidget {
   const AccountActivatePage({super.key});
 
   void _gotoLogin(BuildContext context) {
-    context.push(RouterPath.phoneLogin.fullPath);
+    context.push(RouterPath.login.fullPath);
   }
 
   void _gotoRegister(BuildContext context) {}
 
   @override
   Widget build(BuildContext context) {
-    print('AccountActivatePage build');
     const double edgeSpace = 24;
     return Scaffold(
       body: Container(
@@ -33,8 +32,8 @@ class AccountActivatePage extends StatelessWidget {
           ),
         ),
         child: SafeArea(
-          child: Flex(
-            direction: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Expanded(
@@ -63,13 +62,16 @@ class AccountActivatePage extends StatelessWidget {
               ),
               const SizedBox(width: edgeSpace),
               Expanded(
+                child: ElevatedButton.radius(),
+              ),
+              Expanded(
                 child: ElevatedButton(
                   onPressed: () {
                     _gotoRegister(context);
                   },
                   style: ButtonStyle(
-                    backgroundColor:
-                        WidgetStateProperty.all(const Color(0xFF07C160)),
+                    backgroundColor: WidgetStateProperty.all(
+                        Theme.of(context).colorScheme.primary),
                     elevation: WidgetStateProperty.all(0),
                     padding: WidgetStateProperty.all(
                       const EdgeInsets.symmetric(vertical: 12),

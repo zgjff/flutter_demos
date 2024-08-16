@@ -1,0 +1,18 @@
+name: wc_baseui
+description: "常用UI组件."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+dependencies:
+  flutter:
+    sdk: flutter
+  styled_widget:
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints:
+flutter:
+  uses-material-design: true

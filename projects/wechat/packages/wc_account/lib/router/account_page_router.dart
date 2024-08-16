@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:wc_account/pages/login/phone_login_page.dart';
+import 'package:wc_account/pages/login/login_page.dart';
 import 'package:wc_services/router/index.dart';
 
 import '../pages/index.dart';
@@ -9,17 +9,17 @@ import '../pages/index.dart';
 class AccountPageRouter {
   AccountPageRouter() {
     final account = GoRoute(
-      name: RouterPath.login.name,
-      path: RouterPath.login.fullPath,
+      name: RouterPath.account.name,
+      path: RouterPath.account.fullPath,
       builder: (_, s) => const AccountActivatePage(),
       routes: [
         GoRoute(
-          name: RouterPath.phoneLogin.name,
-          path: RouterPath.phoneLogin.path,
+          name: RouterPath.login.name,
+          path: RouterPath.login.path,
           pageBuilder: (_, state) {
             return MaterialPage(
               key: state.pageKey,
-              child: const PhoneLoginPage(),
+              child: const LoginPage(),
               fullscreenDialog: true,
             );
           },

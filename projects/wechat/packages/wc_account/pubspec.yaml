@@ -13,6 +13,8 @@ dependencies:
     path: ../wc_services
   wc_tool:
     path: ../wc_tool
+  wc_baseui:
+    path: ../wc_baseui
 
   cupertino_icons:
   styled_widget:

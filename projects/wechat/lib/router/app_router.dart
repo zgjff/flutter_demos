@@ -3,7 +3,7 @@ import 'package:wc_account/router/index.dart';
 
 class AppRouter {
   static final router = GoRouter(
-    initialLocation: '/login',
+    initialLocation: '/account',
     routes: AccountPageRouter().routes,
   );
 }
