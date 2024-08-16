@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   wc_services:
     path: ../wc_services
+  wc_tool:
+    path: ../wc_tool
 
   cupertino_icons:
   styled_widget:

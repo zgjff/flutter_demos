@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc:
+  equatable:
 
   wc_account:
     path: packages/wc_account

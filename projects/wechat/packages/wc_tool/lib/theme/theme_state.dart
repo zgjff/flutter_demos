@@ -1,6 +1,7 @@
 part of 'theme_bloc.dart';
 
-@immutable
-sealed class ThemeState {}
+final class ThemeState {
+  const ThemeState({required this.themeMode});
 
-final class ThemeInitial extends ThemeState {}
+  final ThemeMode themeMode;
+}

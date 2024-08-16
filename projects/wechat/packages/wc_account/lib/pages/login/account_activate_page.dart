@@ -21,7 +21,6 @@ class AccountActivatePage extends StatelessWidget {
     const double edgeSpace = 24;
     return Scaffold(
       body: Container(
-        // padding: const EdgeInsets.symmetric(horizontal: edgeSpace),
         padding: const EdgeInsets.only(
             left: edgeSpace, right: edgeSpace, bottom: edgeSpace),
         width: double.infinity,

@@ -1,10 +1,35 @@
+import 'dart:async';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// app偏好存储
 class AppPreferenceCache {
-  static late SharedPreferences _pres;
-  static Future init() async {
-    _pres = await SharedPreferences.getInstance();
+  static AppPreferenceCache? _instance;
+  static Completer<AppPreferenceCache>? _completer;
+
+  final SharedPreferences _pres;
+  AppPreferenceCache._(this._pres);
+
+  static Future<AppPreferenceCache> getInstance() async {
+    if (_instance != null) {
+      return _instance!;
+    }
+    if (_completer == null) {
+      final Completer<AppPreferenceCache> completer =
+          Completer<AppPreferenceCache>();
+      _completer = completer;
+      try {
+        final pres = await SharedPreferences.getInstance();
+        completer.complete(AppPreferenceCache._(pres));
+      } catch (e) {
+        completer.completeError(e);
+        final sharedPreferenceFuture = completer.future;
+        _completer = null;
+        return sharedPreferenceFuture;
+      }
+    }
+    _instance = await _completer!.future;
+    return _instance!;
   }
 
   bool? getBool(String key) => _pres.getBool(key);
