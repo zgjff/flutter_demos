@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:styled_widget/styled_widget.dart';
-import 'package:wc_services/router/router_path.dart';
+import 'package:wc_services/wc_services.dart';
 
 import '../../generated/assets.dart';
 
@@ -61,9 +61,6 @@ class AccountActivatePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: edgeSpace),
-              Expanded(
-                child: ElevatedButton.radius(),
-              ),
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {

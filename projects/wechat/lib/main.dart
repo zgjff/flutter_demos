@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wc_tool/app_preference_cache/app_preference_cache.dart';
-import 'package:wc_tool/theme/index.dart';
+import 'package:wc_tool/wc_tool.dart';
 
 import 'router/app_router.dart';
 
