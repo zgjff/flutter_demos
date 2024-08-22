@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:wc_services/wc_services.dart';
 
 import '../pages/index.dart';
-import '../pages/login/login_page.dart';
 
 /// 账号相关路由
 class AccountPageRouter {

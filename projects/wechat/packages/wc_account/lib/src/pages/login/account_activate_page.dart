@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:styled_widget/styled_widget.dart';
+import 'package:wc_baseui/wc_baseui.dart';
 import 'package:wc_services/wc_services.dart';
 
 import '../../generated/assets.dart';
@@ -13,12 +14,34 @@ class AccountActivatePage extends StatelessWidget {
     context.push(RouterPath.login.fullPath);
   }
 
-  void _gotoRegister(BuildContext context) {}
+  void _gotoRegister(BuildContext context) {
+    context.push(RouterPath.login.fullPath);
+  }
 
   @override
   Widget build(BuildContext context) {
     const double edgeSpace = 24;
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        actions: [
+          TextButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              textStyle: WidgetStateProperty.all(
+                const TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              overlayColor: WidgetStateProperty.all(Colors.transparent),
+              foregroundColor: WidgetStateProperty.all(
+                  const Color.fromRGBO(255, 255, 255, 0.7)),
+              splashFactory: NoSplash.splashFactory,
+            ),
+            child: const Text('简体中文').textColor(Colors.red),
+          )
+        ],
+      ),
       body: Container(
         padding: const EdgeInsets.only(
             left: edgeSpace, right: edgeSpace, bottom: edgeSpace),
@@ -41,23 +64,21 @@ class AccountActivatePage extends StatelessWidget {
                   onPressed: () {
                     _gotoLogin(context);
                   },
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(
+                  style: FillButtonPalette(
+                    background: ButtonStatePalette.normal(
                         const Color.fromARGB(1, 21, 29, 40)),
-                    elevation: WidgetStateProperty.all(0),
-                    padding: WidgetStateProperty.all(
-                      const EdgeInsets.symmetric(vertical: 12),
-                    ),
-                    shape: WidgetStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                  ),
-                  child: const Text('登录')
-                      .textColor(Colors.white)
+                    foreground: ButtonStatePalette.normal(Colors.white),
+                  )
+                      .style
                       .fontSize(18)
-                      .fontWeight(FontWeight.bold),
+                      .bold
+                      .allPadding(const EdgeInsets.symmetric(vertical: 12))
+                      .allShape(
+                        const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                      ),
+                  child: const Text('登录'),
                 ),
               ),
               const SizedBox(width: edgeSpace),
@@ -66,23 +87,21 @@ class AccountActivatePage extends StatelessWidget {
                   onPressed: () {
                     _gotoRegister(context);
                   },
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(
+                  style: FillButtonPalette(
+                    background: ButtonStatePalette.normal(
                         Theme.of(context).colorScheme.primary),
-                    elevation: WidgetStateProperty.all(0),
-                    padding: WidgetStateProperty.all(
-                      const EdgeInsets.symmetric(vertical: 12),
-                    ),
-                    shape: WidgetStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                  ),
-                  child: const Text('注册')
-                      .textColor(Colors.white)
+                    foreground: ButtonStatePalette.normal(Colors.white),
+                  )
+                      .style
                       .fontSize(18)
-                      .fontWeight(FontWeight.bold),
+                      .bold
+                      .allPadding(const EdgeInsets.symmetric(vertical: 12))
+                      .allShape(
+                        const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                      ),
+                  child: const Text('注册'),
                 ),
               ),
             ],
@@ -92,3 +111,5 @@ class AccountActivatePage extends StatelessWidget {
     );
   }
 }
+// super.borderRadius = const BorderRadius.all(Radius.circular(8)),
+// super.padding = const EdgeInsets.symmetric(vertical: 12),
