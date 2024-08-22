@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
+import 'package:wc_account/src/components/display_choose_country.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -26,11 +27,12 @@ class LoginPage extends StatelessWidget {
               const Text('手机号登录')
                   .textStyle(Theme.of(context).textTheme.labelLarge!),
               const SizedBox(height: 50),
-              Divider(height: 1, color: Theme.of(context).dividerColor),
-              // ListView.separated(
-              //     itemBuilder: itemBuilder,
-              //     separatorBuilder: separatorBuilder,
-              //     itemCount: itemCount)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child:
+                    Divider(height: 1, color: Theme.of(context).dividerColor),
+              ),
+              DisplayChooseCountry(currentCountry: '美国', onPressed: () {}),
             ],
           ),
         ),

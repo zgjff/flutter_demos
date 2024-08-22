@@ -119,11 +119,15 @@ class ButtonStatePalette {
 abstract class ButtonPalette {
   final ButtonStatePalette background;
   final ButtonStatePalette? foreground;
+  final BorderRadius borderRadius;
+  final EdgeInsetsGeometry padding;
   final bool disable;
 
   const ButtonPalette({
     required this.background,
     this.foreground,
+    required this.borderRadius,
+    required this.padding,
     this.disable = false,
   });
 
@@ -131,9 +135,13 @@ abstract class ButtonPalette {
 }
 
 final class FillButtonPalette extends ButtonPalette {
+  final double elevation;
   const FillButtonPalette({
     required super.background,
     super.foreground,
+    super.borderRadius = const BorderRadius.all(Radius.circular(8)),
+    super.padding = const EdgeInsets.symmetric(vertical: 12),
+    this.elevation = 0,
     super.disable,
   });
 
@@ -191,6 +199,10 @@ final class FillButtonPalette extends ButtonPalette {
       backgroundColor: WidgetStateProperty.resolveWith(backgroundColor),
       foregroundColor: WidgetStateProperty.resolveWith(foregroundColor),
       overlayColor: WidgetStateProperty.resolveWith(overlayColor),
+      elevation: WidgetStateProperty.all(elevation),
+      shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(borderRadius: borderRadius)),
+      padding: WidgetStateProperty.all(padding),
     );
   }
 }

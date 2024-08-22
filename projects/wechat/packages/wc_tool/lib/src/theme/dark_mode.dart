@@ -8,6 +8,7 @@ ThemeData darkMode = ThemeData.dark(useMaterial3: true).copyWith(
       color: Colors.white,
     ),
   ),
+  splashFactory: NoSplash.splashFactory,
   dividerColor: const Color.fromRGBO(70, 70, 70, 0.3),
   colorScheme: const ColorScheme.dark(
     primary: Color(0xFF07C160),
@@ -23,6 +24,11 @@ ThemeData darkMode = ThemeData.dark(useMaterial3: true).copyWith(
       color: Colors.white,
       fontSize: 26,
       fontWeight: FontWeight.w900,
+    ),
+    labelMedium: TextStyle(
+      color: Colors.white,
+      fontSize: 20,
+      fontWeight: FontWeight.normal,
     ),
   ),
 );

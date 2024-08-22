@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wc_services/wc_services.dart';
 
-import '../pages/index.dart';
+import '../pages/pages.dart';
 
 /// 账号相关路由
 class AccountPageRouter {

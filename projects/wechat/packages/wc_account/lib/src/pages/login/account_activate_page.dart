@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:styled_widget/styled_widget.dart';
 import 'package:wc_baseui/wc_baseui.dart';
 import 'package:wc_services/wc_services.dart';
 
@@ -38,7 +37,7 @@ class AccountActivatePage extends StatelessWidget {
                   const Color.fromRGBO(255, 255, 255, 0.7)),
               splashFactory: NoSplash.splashFactory,
             ),
-            child: const Text('简体中文').textColor(Colors.red),
+            child: const Text('简体中文'),
           )
         ],
       ),
@@ -68,16 +67,7 @@ class AccountActivatePage extends StatelessWidget {
                     background: ButtonStatePalette.normal(
                         const Color.fromARGB(1, 21, 29, 40)),
                     foreground: ButtonStatePalette.normal(Colors.white),
-                  )
-                      .style
-                      .fontSize(18)
-                      .bold
-                      .allPadding(const EdgeInsets.symmetric(vertical: 12))
-                      .allShape(
-                        const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                        ),
-                      ),
+                  ).style.fontSize(18).bold,
                   child: const Text('登录'),
                 ),
               ),
@@ -91,16 +81,7 @@ class AccountActivatePage extends StatelessWidget {
                     background: ButtonStatePalette.normal(
                         Theme.of(context).colorScheme.primary),
                     foreground: ButtonStatePalette.normal(Colors.white),
-                  )
-                      .style
-                      .fontSize(18)
-                      .bold
-                      .allPadding(const EdgeInsets.symmetric(vertical: 12))
-                      .allShape(
-                        const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                        ),
-                      ),
+                  ).style.fontSize(18).bold,
                   child: const Text('注册'),
                 ),
               ),
@@ -111,5 +92,3 @@ class AccountActivatePage extends StatelessWidget {
     );
   }
 }
-// super.borderRadius = const BorderRadius.all(Radius.circular(8)),
-// super.padding = const EdgeInsets.symmetric(vertical: 12),

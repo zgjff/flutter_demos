@@ -8,6 +8,7 @@ ThemeData lightMode = ThemeData.light(useMaterial3: true).copyWith(
       color: Colors.black,
     ),
   ),
+  splashFactory: NoSplash.splashFactory,
   dividerColor: const Color.fromRGBO(77, 77, 77, 0.1),
   colorScheme: const ColorScheme.light(
     primary: Color(0xFF07C160),
@@ -23,6 +24,11 @@ ThemeData lightMode = ThemeData.light(useMaterial3: true).copyWith(
       color: Colors.black,
       fontSize: 26,
       fontWeight: FontWeight.w900,
+    ),
+    labelMedium: TextStyle(
+      color: Colors.black,
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
     ),
   ),
 );
