@@ -14,8 +14,7 @@ class AutoHideKeyboard extends StatefulWidget {
   const AutoHideKeyboard.ignorePadding({
     super.key,
     required this.child,
-    this.safePadding = EdgeInsets.zero,
-  });
+  }) : safePadding = EdgeInsets.zero;
 
   final Widget child;
   final EdgeInsets? safePadding;
