@@ -1,2 +1,2 @@
-export 'button_palette.dart';
-export 'button_style_extension.dart';
+export 'src/button_palette.dart';
+export 'src/button_style_extension.dart';

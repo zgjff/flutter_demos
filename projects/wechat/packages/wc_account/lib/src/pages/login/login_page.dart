@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
-import 'package:wc_account/src/components/display_choose_country.dart';
+
+import 'components/components.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -21,7 +22,7 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding:
-              const EdgeInsets.only(left: 24, right: 24, bottom: 24, top: 40),
+              const EdgeInsets.only(left: 16, right: 16, bottom: 24, top: 40),
           child: Column(
             children: [
               const Text('手机号登录')
@@ -32,7 +33,28 @@ class LoginPage extends StatelessWidget {
                 child:
                     Divider(height: 1, color: Theme.of(context).dividerColor),
               ),
-              DisplayChooseCountry(currentCountry: '美国', onPressed: () {}),
+              SizedBox(
+                height: 60,
+                child: DisplayChooseCountry(
+                    currentCountry: '美国', onPressed: () {}),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child:
+                    Divider(height: 1, color: Theme.of(context).dividerColor),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 12),
+                child: SizedBox(
+                  height: 60,
+                  child: InputCountryMobile(code: '+1'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child:
+                    Divider(height: 1, color: Theme.of(context).dividerColor),
+              ),
             ],
           ),
         ),

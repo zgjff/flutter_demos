@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   styled_widget:
+  visibility_detector:
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -21,6 +21,7 @@ class AccountActivatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     const double edgeSpace = 24;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         actions: [
