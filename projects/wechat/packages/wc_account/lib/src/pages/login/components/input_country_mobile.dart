@@ -33,26 +33,20 @@ class InputCountryMobile extends StatelessWidget {
                   .fontSize(18)
                   .fontWeight(FontWeight.w600),
               const SizedBox(width: 16),
-              Expanded(
-                child: AutoHideKeyboard.ignorePadding(
-                  child: TextField(
-                    onChanged: (text) {},
-                    onEditingComplete: () {},
-                    autofocus: false,
-                    decoration: InputDecoration(
-                      hintText: "请填写手机号码",
-                      hintStyle: const TextStyle(
-                        color: Color.fromRGBO(255, 255, 255, 0.6),
-                      ),
-                      border:
-                          const OutlineInputBorder(borderSide: BorderSide.none),
-                      suffixIcon: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.close_outlined)),
+              const Expanded(
+                child: CustomTextField(
+                  decoration: InputDecoration(
+                    hintText: "请填写手机号码",
+                    hintStyle: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 0.6),
                     ),
-                    keyboardType: TextInputType.number,
-                    obscureText: false,
+                    border: OutlineInputBorder(borderSide: BorderSide.none),
+                    suffixIcon: Icon(Icons.close_outlined),
+                    counterText: '',
                   ),
+                  suffixIconMode: TextFieldSuffixIconMode.whileContent,
+                  suffixIconAction: TextFieldSuffixIconAction.clear,
+                  keyboardType: TextInputType.number,
                 ),
               ),
             ],

@@ -55,6 +55,13 @@ class LoginPage extends StatelessWidget {
                 child:
                     Divider(height: 1, color: Theme.of(context).dividerColor),
               ),
+              TextButton(
+                onPressed: () {},
+                child: const Text('使用其它方式登录')
+                    .fontSize(17)
+                    .textColor(const Color(0xFF457EE0))
+                    .fontWeight(FontWeight.w700),
+              ),
             ],
           ),
         ),
