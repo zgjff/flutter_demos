@@ -47,6 +47,7 @@ class InputCountryMobile extends StatelessWidget {
                   suffixIconMode: TextFieldSuffixIconMode.whileContent,
                   suffixIconAction: TextFieldSuffixIconAction.clear,
                   keyboardType: TextInputType.number,
+                  maxLength: 24,
                 ),
               ),
             ],

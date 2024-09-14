@@ -1,5 +1,3 @@
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
-
 import 'package:flutter/material.dart';
 
 part 'suffix_icon_mode.dart';
@@ -39,7 +37,7 @@ class CustomTextField extends StatefulWidget {
   final ValueChanged<String>? onEndEditing;
 
   /// 点击`suffixIcon`事件
-  final VoidCallbackAction? onTapSuffixIcon;
+  final VoidCallback? onTapSuffixIcon;
   final String? defaultText;
   final int maxLength;
 
@@ -206,7 +204,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
         });
         return;
       case TextFieldSuffixIconAction.custom:
-        widget.onTapSuffixIcon?.call();
+        if (widget.onTapSuffixIcon != null) {
+          widget.onTapSuffixIcon!.call();
+        }
         return;
     }
   }
