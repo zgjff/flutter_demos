@@ -24,6 +24,7 @@ class AccountActivatePage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         actions: [
           TextButton(
             onPressed: () {},

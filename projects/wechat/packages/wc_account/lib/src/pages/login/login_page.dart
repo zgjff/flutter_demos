@@ -21,9 +21,10 @@ class LoginPage extends StatelessWidget {
         ),
       ),
       body: SafeArea(
+        bottom: false,
         child: Padding(
           padding:
-              const EdgeInsets.only(left: 16, right: 16, bottom: 24, top: 40),
+              const EdgeInsets.only(left: 16, right: 16, bottom: 0, top: 40),
           child: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
@@ -35,10 +36,12 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
+              const SliverToBoxAdapter(
+                child: SizedBox(height: 50),
+              ),
               SliverToBoxAdapter(
                 child: Column(
                   children: [
-                    const SizedBox(height: 50),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: Divider(
@@ -72,30 +75,38 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               SliverToBoxAdapter(
-                child: TextButton(
-                  onPressed: () {},
-                  style: const FillButtonPalette(
-                    background: ButtonStatePalette.all(Colors.transparent),
-                    padding: EdgeInsets.only(left: 12, top: 16, bottom: 16),
-                  ).style,
-                  child: const Text('使用其它方式登录')
-                      .fontSize(17)
-                      .textColor(const Color(0xFF457EE0))
-                      .fontWeight(FontWeight.w700),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    TextButton(
+                      onPressed: () {},
+                      style: const FillButtonPalette(
+                        background: ButtonStatePalette.all(Colors.transparent),
+                        padding: EdgeInsets.only(left: 12, top: 16, bottom: 16),
+                      ).style,
+                      child: const Text('使用其它方式登录')
+                          .fontSize(17)
+                          .textColor(const Color(0xFF457EE0))
+                          .fontWeight(FontWeight.w700),
+                    ),
+                  ],
                 ),
               ),
               SliverFillRemaining(
                 hasScrollBody: false,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    LoginPageBottom(
-                      currentLoginStyleDesc: '上述手机号仅用于登录验证',
-                      onTapLogin: () {},
-                      onTapFindPwdLogin: () {},
-                      onTapMoreLogin: () {},
-                    ),
-                  ],
+                child: SafeArea(
+                  minimum: const EdgeInsets.only(bottom: 20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      LoginPageBottom(
+                        currentLoginStyleDesc: '上述手机号仅用于登录验证',
+                        onTapLogin: () {},
+                        onTapFindPwdLogin: () {},
+                        onTapMoreLogin: () {},
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
