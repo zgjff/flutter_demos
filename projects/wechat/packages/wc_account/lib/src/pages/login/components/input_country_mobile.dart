@@ -7,11 +7,14 @@ class InputCountryMobile extends StatelessWidget {
   const InputCountryMobile({
     super.key,
     required this.code,
+    this.onChanged,
   });
 
   /// 地区码
   final String code;
 
+  /// 输入文字变化
+  final ValueChanged<String>? onChanged;
   @override
   Widget build(BuildContext context) {
     return Flex(
@@ -33,9 +36,9 @@ class InputCountryMobile extends StatelessWidget {
                   .fontSize(18)
                   .fontWeight(FontWeight.w600),
               const SizedBox(width: 16),
-              const Expanded(
+              Expanded(
                 child: CustomTextField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: "请填写手机号码",
                     hintStyle: TextStyle(
                       color: Color.fromRGBO(255, 255, 255, 0.6),
@@ -48,6 +51,7 @@ class InputCountryMobile extends StatelessWidget {
                   suffixIconAction: TextFieldSuffixIconAction.clear,
                   keyboardType: TextInputType.number,
                   maxLength: 24,
+                  onChanged: onChanged,
                 ),
               ),
             ],
