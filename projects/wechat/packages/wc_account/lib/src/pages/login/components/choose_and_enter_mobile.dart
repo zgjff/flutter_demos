@@ -7,7 +7,19 @@ import 'input_country_mobile.dart';
 
 /// 选择并输入手机号
 class ChooseAndEnterMobile extends StatelessWidget {
-  const ChooseAndEnterMobile({super.key, this.onTapCity, this.onChanged});
+  const ChooseAndEnterMobile({
+    super.key,
+    this.cityName,
+    this.phoneCode,
+    this.onTapCity,
+    this.onChanged,
+  });
+
+  /// 国家名称
+  final String? cityName;
+
+  /// 电话区号
+  final String? phoneCode;
 
   /// 点击国家地区
   final VoidCallback? onTapCity;
@@ -25,18 +37,19 @@ class ChooseAndEnterMobile extends StatelessWidget {
         ),
         SizedBox(
           height: 60,
-          child: DisplayChooseCountry(currentCountry: '美国', onPressed: () {}),
+          child: DisplayChooseCountry(
+              currentCountry: cityName ?? "", onPressed: () {}),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Divider(height: 1, color: Theme.of(context).dividerColor),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 12),
+          padding: const EdgeInsets.only(left: 12, right: 8),
           child: SizedBox(
             height: 60,
             child: InputCountryMobile(
-              code: '+1',
+              code: '+${phoneCode ?? ""}',
               onChanged: onChanged,
             ),
           ),
