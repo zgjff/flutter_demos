@@ -23,6 +23,17 @@ class AccountPageRouter {
             );
           },
         ),
+        GoRoute(
+          name: RouterPath.chooseCountry.name,
+          path: RouterPath.chooseCountry.path,
+          pageBuilder: (_, state) {
+            return MaterialPage(
+              key: state.pageKey,
+              child: const ChooseCountryPage(),
+              fullscreenDialog: true,
+            );
+          },
+        ),
       ],
     );
     routes = [account];

@@ -1,3 +1,3 @@
-library wc_services;
+library;
 
 export 'src/router/index.dart';

@@ -14,6 +14,10 @@ class RouterPath {
   static const login = RouterPathItem(
       name: 'account_login', parentPath: '/account', path: 'login');
 
+  /// 选择国家地区
+  static const chooseCountry = RouterPathItem(
+      name: 'choose_country', parentPath: '/account', path: 'chooseCountry');
+
   /// 主app tab
   static const appTab = "/tab";
 }

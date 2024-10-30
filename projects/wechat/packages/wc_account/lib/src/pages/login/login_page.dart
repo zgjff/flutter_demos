@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:styled_widget/styled_widget.dart';
+import 'package:wc_account/src/models/country_region_phone_code.dart';
+import 'package:wc_services/wc_services.dart';
 
 import 'blocs/login_blocs.dart';
 import 'components/components.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
+
+  void _goRegionPhoneCode(BuildContext context) {
+    context.push(RouterPath.chooseCountry.fullPath);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +24,7 @@ class LoginPage extends StatelessWidget {
       ],
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: const Icon(Icons.close),
-          ),
-        ),
+        appBar: _appbar(context),
         body: SafeArea(
           bottom: false,
           child: Padding(
@@ -46,14 +45,18 @@ class LoginPage extends StatelessWidget {
                   child: SizedBox(height: 50),
                 ),
                 SliverToBoxAdapter(
-                  child: BlocBuilder<CountryRegionBloc, CountryRegionState>(
+                  child: BlocSelector<CountryRegionBloc, CountryRegionState,
+                          CountryRegionPhoneCode?>(
+                      selector: (state) => state.chooseRegionCode,
                       builder: (context, state) {
-                    return ChooseAndEnterMobile(
-                      cityName: state.chooseRegionCode?.chineseName,
-                      phoneCode: state.chooseRegionCode?.phoneCode,
-                      onTapCity: () {},
-                    );
-                  }),
+                        return ChooseAndEnterMobile(
+                          cityName: state?.chineseName,
+                          phoneCode: state?.phoneCode,
+                          onTapCity: () {
+                            _goRegionPhoneCode(context);
+                          },
+                        );
+                      }),
                 ),
                 SliverFillRemaining(
                   hasScrollBody: false,
@@ -76,6 +79,18 @@ class LoginPage extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  PreferredSizeWidget _appbar(BuildContext context) {
+    return AppBar(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      leading: IconButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        icon: const Icon(Icons.close),
       ),
     );
   }

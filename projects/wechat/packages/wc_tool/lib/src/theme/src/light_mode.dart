@@ -7,6 +7,11 @@ ThemeData lightMode = ThemeData.light(useMaterial3: true).copyWith(
     iconTheme: IconThemeData(
       color: Colors.black,
     ),
+    titleTextStyle: TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w800,
+      fontSize: 20,
+    ),
   ),
   splashFactory: NoSplash.splashFactory,
   dividerColor: const Color.fromRGBO(77, 77, 77, 0.1),

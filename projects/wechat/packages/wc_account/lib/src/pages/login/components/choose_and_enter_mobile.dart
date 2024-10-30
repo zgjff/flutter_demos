@@ -38,7 +38,7 @@ class ChooseAndEnterMobile extends StatelessWidget {
         SizedBox(
           height: 60,
           child: DisplayChooseCountry(
-              currentCountry: cityName ?? "", onPressed: () {}),
+              currentCountry: cityName ?? "", onPressed: onTapCity),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
