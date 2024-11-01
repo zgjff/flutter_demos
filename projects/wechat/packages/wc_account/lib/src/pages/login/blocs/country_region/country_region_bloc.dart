@@ -7,8 +7,7 @@ part 'country_region_event.dart';
 part 'country_region_state.dart';
 
 class CountryRegionBloc extends Bloc<CountryRegionEvent, CountryRegionState> {
-  CountryRegionBloc()
-      : super(CountryRegionState(chooseRegionCode: CountryRegionPhoneCode.us)) {
+  CountryRegionBloc() : super(CountryRegionState()) {
     on<ChangedCountryRegion>((event, emit) {
       emit(state.copyWith(chooseRegionCode: event.regionPhoneCode));
     });

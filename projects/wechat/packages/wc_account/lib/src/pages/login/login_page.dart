@@ -11,8 +11,15 @@ import 'components/components.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
-  void _goRegionPhoneCode(BuildContext context) {
-    context.push(RouterPath.chooseCountry.fullPath);
+  Future<void> _goRegionPhoneCode(BuildContext context) async {
+    final value = await context.push(RouterPath.chooseCountry.fullPath);
+    final object = value is CountryRegionPhoneCode ? value : null;
+    if (object == null || !context.mounted) {
+      return;
+    }
+    context
+        .read<CountryRegionBloc>()
+        .add(ChangedCountryRegion(regionPhoneCode: object));
   }
 
   @override
@@ -20,7 +27,11 @@ class LoginPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => LoginWayBloc()),
-        BlocProvider(create: (_) => CountryRegionBloc()),
+        BlocProvider(
+          create: (_) => CountryRegionBloc()
+            ..add(ChangedCountryRegion(
+                regionPhoneCode: CountryRegionPhoneCode.us)),
+        ),
       ],
       child: Scaffold(
         extendBodyBehindAppBar: true,

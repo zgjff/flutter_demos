@@ -1,25 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wc_account/src/models/country_region_phone_code.dart';
 
 /// 选择国家地区
-class ChooseCountryPage extends StatefulWidget {
-  const ChooseCountryPage({
-    super.key,
-    this.onChoose,
-  });
-
-  final ValueChanged<CountryRegionPhoneCode>? onChoose;
-
-  @override
-  State<ChooseCountryPage> createState() => _ChooseCountryPageState();
-}
-
-class _ChooseCountryPageState extends State<ChooseCountryPage> {
-  @override
-  void initState() {
-    super.initState();
-  }
+class ChooseCountryPage extends StatelessWidget {
+  const ChooseCountryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
